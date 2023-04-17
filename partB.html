@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <title>Part B</title>
+    <link rel="stylesheet" type="text/css" href="./partB.css" >
+    <script src="partB.js" defer></script>
+  </head>
+  <body>
+    <header id="header" class="start">
+      <h1>Hello, choose your level and hit start game</h1>
+      <button id="start-button">Start Game!</button>
+      <h2>Select difficulty level</h2>
+      <form class="difficult-level">
+        <label for="easy">Easy</label>
+        <label for="medium">Medium</label>
+        <label for="hard">Hard</label>
+
+        <input type="radio" id="easy" name="difficulty" value="easy" checked >
+
+        <input type="radio" id="medium" name="difficulty" value="medium" >
+
+        <input type="radio" id="hard" name="difficulty" value="hard" >
+
+        <label style="margin-top: 20px" for="easy-pic">8 pictures</label>
+        <label style="margin-top: 20px" for="medium-pic">10 pictures</label>
+        <label style="margin-top: 20px" for="hard-pic">12 pictures</label>
+
+        <input type="radio" id="easy-pic" name="pictures" value="8" checked >
+
+        <input type="radio" id="medium-pic" name="pictures" value="10" >
+
+        <input type="radio" id="hard-pic" name="pictures" value="12" >
+      </form>
+      <p
+        style="
+          font-size: 28px;
+          margin-bottom: -20px;
+          color: red;
+          font-weight: 600;
+        "
+      >
+        Notes
+      </p>
+      <p style="width: 50%; font-size: 18px; text-align: center">
+        This is a memory-based matching game. The player must match pairs of
+        pictures in a grid. Before starting, the player chooses the difficulty
+        level and the number of picture pairs. The game briefly shows all
+        pictures face-up to memorize their locations, then flips them face-down.
+        The player must click on pairs of hidden pictures to reveal and match
+        them. The game is timed, and the goal is to match all pairs before the
+        timer runs out. The memorization time varies based on the chosen
+        difficulty level: 3 seconds for hard, 5 seconds for medium, and 8
+        seconds for easy. The game is timed, with a countdown timer ticking down
+        during play. The timer is set to 120 seconds for 8 pairs of pictures,
+        150 seconds for 10 pairs, and 180 seconds for 12 pairs.
+      </p>
+    </header>
+    <h1
+      style="
+        padding: 10px 0;
+        background-color: black;
+        color: red;
+        text-align: center;
+      "
+    >
+      Pokemon Match
+    </h1>
+    <main id="main">
+      <div id="info">
+        <p>Level: <span id="level"></span></p>
+        <p>Pics: <span id="pics"></span></p>
+        <p>Time Left: <span id="time"></span></p>
+      </div>
+    </main>
+    <div class="new-game-button-container">
+      <button id="new-game-button">New Game!</button>
+    </div>
+  </body>
+</html>

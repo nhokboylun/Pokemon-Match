@@ -1,0 +1,192 @@
+body {
+  margin: 0;
+  position: relative;
+  background-image: url(./background.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+}
+
+#main {
+  margin: 0 auto;
+  border: 1.5px solid black;
+}
+
+.eight {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 606px;
+}
+
+.ten {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  width: 757.5px;
+}
+
+.twelve {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  width: 909px;
+}
+
+img {
+  border: 1.5px solid black;
+  width: 150px;
+  height: 150px;
+}
+
+.start {
+  z-index: 1;
+  background-color: white;
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  opacity: 98%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 20px;
+}
+
+.hide-header {
+  animation: disappear 1s forwards;
+}
+
+@keyframes disappear {
+  0% {
+    opacity: 97.5%;
+  }
+  60% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+
+#start-button {
+  background-color: blue;
+  border: none;
+  color: white;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px 2px;
+  padding: 12px 24px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.new-game-button-container {
+  text-align: center;
+}
+
+#new-game-button,
+#new-game-button-over {
+  background-color: blue;
+  color: yellow;
+  font-weight: 600;
+  border: none;
+  display: inline-block;
+  font-size: 18px;
+  margin-top: 10px;
+  padding: 6px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+#start-button:hover,
+#new-game-button:hover,
+#new-game-button-over:hover {
+  background-color: #45a049;
+}
+
+h1,
+h2 {
+  margin: 0;
+}
+
+.difficult-level {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 20px;
+  row-gap: 5px;
+}
+
+label {
+  text-align: center;
+  font-weight: 500;
+}
+
+label[for="easy"] {
+  color: green;
+}
+
+label[for="medium"] {
+  color: rgb(245, 186, 9);
+}
+
+label[for="hard"] {
+  color: red;
+}
+
+#info {
+  position: absolute;
+  left: 0;
+  color: red;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+#timer {
+  font-size: 200px;
+  color: red;
+  font-weight: 700;
+}
+
+/* Flip */
+.flip-container {
+  perspective: 1000px;
+  width: 150px;
+  height: 150px;
+}
+
+.flipper {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.flip-container.clicked .flipper {
+  transform: rotateY(180deg);
+}
+
+.front,
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.front {
+  z-index: 2;
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+.matched {
+  display: none;
+  z-index: -999;
+}
